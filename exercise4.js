@@ -18,10 +18,8 @@ function copyProp(objectA, objectB, prop = []) {
   }
   // Second case: the user provided properties to follow:
   else {
-    for (let property of propertiesB) {
-      if (prop.indexOf(property[0]) !== -1) {
-        objectA[property[0]] = property[1];
-      }
+    for (let property of prop) {
+      objectA[property] = objectB[property];
     }
     return objectA;
   }
