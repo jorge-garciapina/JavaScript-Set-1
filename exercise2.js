@@ -26,3 +26,4 @@ console.log(limitedAdd(1, 2)); // Output: 3
 console.log(limitedAdd(3, 4)); // Output: 7
 // Call limitedAdd function with more arguments, should throw error
 console.log(limitedAdd(5, 6)); // Output: Error: Function can only be called 2 times
+ 
