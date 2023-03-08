@@ -28,21 +28,15 @@ function sortWords(words, order, ascending) {
       // -countConsonants- provides all the consonants
       // in a word.
       let countConsonants = function (str) {
-        let count = 0;
-        // Simple application if Regular Expressions.
-        // /[bcdfghjklmnpqrstvwxyz]/i means: consonants, case-insensitive.
-        for (let i = 0; i < str.length; i++) {
-          let char = str[i];
-          if (char.match(/[bcdfghjklmnpqrstvwxyz]/i)) {
-            count++;
-          }
-        }
-        // Returns the number of matches i.e. the consonants in the word.
-        return count;
+        // Use a regular expression to match consonants
+        let consonants = str.match(/[bcdfghjklmnpqrstvwxyz]/gi);
+
+        // Return the length of the resulting array
+        return consonants ? consonants.length : 0;
       };
+      
       return countConsonants(a) - countConsonants(b);
     });
-
   }
   // --------------END: PART 3 -----------------------
 
