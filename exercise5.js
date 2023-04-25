@@ -1,13 +1,8 @@
 function vowelsDigits(inpt) {
   if (typeof inpt === "number") {
-    // Logaritmic solution:
     return Math.floor(Math.log10(inpt)) + 1;
-  }
-  // Vowels solution
-  // I used a regular expression to extract the
-  // vowels in the input
-  else {
-    const regexVowels = /[aeiouAEIOU]/g;
+  } else {
+    const regexVowels = /[aeiou]/gi; // Add the "i" flag to make the regex case-insensitive
     let matches = inpt.match(regexVowels);
     if (!matches) {
       return 0;
@@ -24,7 +19,7 @@ let variableDigits = Math.floor(
   Math.pow(Math.random() * 100, Math.random() * 10)
 );
 
-console.log(vowelsDigits(variableDigits));
+console.log(variableDigits, vowelsDigits(variableDigits));
 
 // let fixedLetters = "aabbccddeeffg";
 let fixedLetters = "why";
