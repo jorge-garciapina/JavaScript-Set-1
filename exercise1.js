@@ -19,8 +19,8 @@ function sortWords(words, order, ascending) {
       return countConsonants(a) - countConsonants(b);
     });
   } else {
-    console.log(
-      `${order} is not valid order options (byWord, byLength, byConsonants)`
+    throw new Error(
+      `${order} is not a valid order. Options are byWord, byLength, or byConsonants.`
     );
   }
 
@@ -42,12 +42,19 @@ let inputWords = [
   "gaming",
   "network",
 ];
-// Correct order: ["application","bebida", "babel, "gaming", "javascript", "keyboard", "monitor", "network", "program"];
 
-console.log(sortWords(inputWords, "byWord", "ascending"));
+try {
+  console.log(sortWords(inputWords, "byWord", "ascending"));
+} catch (e) {
+  console.error(e.message);
+}
 
 let inputLength = ["aaaaa", "aaa", "aaaaaa", "aa", "aaaaaaa", "a", "aaaa"];
-console.log(sortWords(inputLength, "byLength", "descending"));
+try {
+  console.log(sortWords(inputLength, "byLength", "descending"));
+} catch (e) {
+  console.error(e.message);
+}
 
 let inputConsonants = [
   "aeiobcdf",
@@ -56,4 +63,8 @@ let inputConsonants = [
   "aaaaaaebc",
   "aeioubcdfg",
 ];
-console.log(sortWords(inputConsonants, "byConsonants", "ascending"));
+try {
+  console.log(sortWords(inputConsonants, "byConsonants", "ascending"));
+} catch (e) {
+  console.error(e.message);
+}
